@@ -1,9 +1,5 @@
-# Fabric Example Mod
+# EMIgration
 
-## Setup
+Bare assed EMI support for Farmer's Delight since it only supports REI or JEI or whatever it's called now. Maybe more to come if I install any more mods that need it.
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+I made this for my own personal use, but feel free to make it yours. I claim no ownership of the code. ~~I'm looking at you, Farmer's Delight Fabric port maintainers.~~ \<3

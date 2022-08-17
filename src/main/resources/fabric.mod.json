@@ -1,38 +1,33 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "emigration",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
-  "authors": [
-    "Me!"
-  ],
+  "name": "EMIgration",
+  "description": "EMI support for a handful of mods that don't ship with it. Actually just Farmer's Delight.",
+  "authors": [ "riley" ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/erisdev/emigration",
+    "issues": "https://github.com/erisdev/emigration/issues",
+    "sources": "https://github.com/erisdev/emigration"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
-    ]
+    "emi": [ "zone.possum.emigration.EmigrationPlugin" ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
 
   "depends": {
     "fabricloader": ">=0.14.6",
     "fabric": "*",
     "minecraft": "~1.18.2",
-    "java": ">=17"
+    "java": ">=17",
+    "emi": "*"
   },
+
   "suggests": {
-    "another-mod": "*"
+    "farmersdelight": "*"
   }
 }

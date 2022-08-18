@@ -70,23 +70,20 @@ public class EmiCookingPotRecipe implements EmiRecipe {
         // }
 
         gui.addSlot(output, 94, 9).drawBack(false);
-        gui.addSlot(output, 94, 38).drawBack(false);
-
-        if (!container.isEmpty()) {
-            gui.addSlot(container, 62, 38)
-                .drawBack(false);
-        }
+        gui.addSlot(output, 94, 38);
+        gui.addSlot(container, 62, 38);
 
         final int slotSize = 18;
         for (int row = 0; row < 2; ++row) {
             for (int col = 0; col < 3; ++col) {
                 final int i = row * 3 + col;
-                if (i < ingredients.size()) {
-                    gui.addSlot(ingredients.get(i),
-                            col * slotSize,
-                            row * slotSize)
-                        .drawBack(false);
-                }
+                EmiIngredient ingredient = (
+                    i < ingredients.size()
+                        ? ingredients.get(i)
+                        : EmiStack.EMPTY);
+                gui.addSlot(ingredient,
+                    col * slotSize,
+                    row * slotSize);
             }
         }
     }

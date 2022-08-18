@@ -39,7 +39,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation "dev.emi:emi:${project.emi_version}"
-	modImplementation "maven.modrinth:farmers-delight:${project.farmersdelight_version}"
+	modImplementation "maven.modrinth:farmers-delight-fabric:${project.farmersdelight_version}"
 }
 
 processResources {

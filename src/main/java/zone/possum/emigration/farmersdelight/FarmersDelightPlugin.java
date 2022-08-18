@@ -20,7 +20,7 @@ import com.nhoryzon.mc.farmersdelight.recipe.CuttingBoardRecipe;
 import com.nhoryzon.mc.farmersdelight.registry.BlocksRegistry;
 import com.nhoryzon.mc.farmersdelight.registry.ItemsRegistry;
 import com.nhoryzon.mc.farmersdelight.registry.RecipeTypesRegistry;
-import com.nhoryzon.mc.farmersdelight.tag.Tags;
+import com.nhoryzon.mc.farmersdelight.registry.TagsRegistry;
 
 public class FarmersDelightPlugin implements EmiPlugin {
 	private static final RecipeType<CookingPotRecipe> COOKING_T = RecipeTypesRegistry.COOKING_RECIPE_SERIALIZER.type();
@@ -43,6 +43,7 @@ public class FarmersDelightPlugin implements EmiPlugin {
 		var recipes = emi.getRecipeManager();
 
 		emi.addWorkstation(VanillaEmiRecipeCategories.CAMPFIRE_COOKING, EmiStack.of(ItemsRegistry.STOVE.get()));
+		emi.addWorkstation(VanillaEmiRecipeCategories.CAMPFIRE_COOKING, EmiStack.of(ItemsRegistry.SKILLET.get()));
 
 		emi.addCategory(FarmersDelightPlugin.COOKING);
 		emi.addWorkstation(FarmersDelightPlugin.COOKING, EmiStack.of(ItemsRegistry.COOKING_POT.get()));
@@ -59,11 +60,11 @@ public class FarmersDelightPlugin implements EmiPlugin {
 			.forEach(emi::addRecipe);
 
 		emi.addCategory(DECOMPOSITION);
-		emi.addWorkstation(DECOMPOSITION, EmiStack.of(BlocksRegistry.RICH_SOIL.get()));
+		// emi.addWorkstation(DECOMPOSITION, EmiStack.of(BlocksRegistry.RICH_SOIL.get()));
 		emi.addRecipe(new EmiDecompositionRecipe(
 			BlocksRegistry.RICH_SOIL.get(),
 			BlocksRegistry.ORGANIC_COMPOST.get(),
-			Registry.BLOCK.getEntryList(Tags.COMPOST_ACTIVATORS).stream()
+			Registry.BLOCK.getEntryList(TagsRegistry.COMPOST_ACTIVATORS).stream()
 				.parallel()
 				.flatMap(RegistryEntryList::stream)
 				.map(RegistryEntry::value)

@@ -62,14 +62,15 @@ public class EmiCuttingBoardRecipe implements EmiRecipe {
 
         final int slotSize = 18;
         for (int row = 0; row < 2; ++row) {
-            for (int col = 0; col < 3; ++col) {
-                final int i = row * 3 + col;
-                if (i < outputs.size()) {
-                    gui.addSlot(outputs.get(i),
-                            77 + col * slotSize,
-                            11 + row * slotSize)
-                        .drawBack(false);
-                }
+            for (int col = 0; col < 2; ++col) {
+                final int i = row * 2 + col;
+                EmiStack stack = (
+                    i < outputs.size()
+                        ? outputs.get(i)
+                        : EmiStack.EMPTY);
+                gui.addSlot(stack,
+                    77 + col * slotSize,
+                    11 + row * slotSize);
             }
         }
     }

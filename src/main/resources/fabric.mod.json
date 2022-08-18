@@ -28,6 +28,10 @@
   },
 
   "suggests": {
-    "farmersdelight": "*"
+    "farmersdelight": "~1.2.0"
+  },
+
+  "breaks": {
+    "farmersdelight": "<1.2.0"
   }
 }
